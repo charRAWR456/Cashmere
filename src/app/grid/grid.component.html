@@ -1,0 +1,9 @@
+<div *ngFor="let row of testGrid.board">
+  <div class="row">
+    <div *ngFor="let col of row">
+      <div class="tile">
+        {{col.x}}, {{col.y}}
+      </div>
+    </div>
+  </div>
+</div>

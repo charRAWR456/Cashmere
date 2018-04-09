@@ -1,0 +1,8 @@
+.tile {
+  border: 1px solid red;
+  display: block;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  font-size: 30px;
+}
