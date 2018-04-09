@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { Routing } from './app.routing';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { Routing } from './app.routing';
     LoginComponent,
     WelcomeComponent,
     NavbarComponent
+    GameComponent
   ],
   imports: [
     BrowserModule,
