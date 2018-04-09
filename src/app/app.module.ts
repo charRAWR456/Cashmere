@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+>>>>>>> charlie-work
 import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
 
