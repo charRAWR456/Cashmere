@@ -4,7 +4,7 @@
 ### By Jamie Pittak, Panatda Inthala, Eric Swotinsky, Nanette Girzi, Tyler Kostelak, Dillon Titcomb
 
 ## Description
-User will play as a student at a bootcamp that wants to take a break to pet the school mascot, the amazing scottish fold Cashmere. You as the student must escape the teachers wrath and make it to Cashmere before you are caught (3 time). If you successfully make it to Cashmere you can graduate early!
+User will play as a student at a bootcamp that wants to take a break to pet the school mascot, the amazing scottish fold Cashmere. You as the student must escape the teachers wrath and make it to Cashmere before you are caught (3 time). If you successfully make it to Cashmere you can graduate early! :)
 
 ## Setup
 1. Make sure you have Angular, Node.js and npm installed
