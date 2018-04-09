@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="loginContainer">
+    <form #loginForm="ngForm">
+      <h1 class="login-title" id="loginText">Log In</h1>
+      <div class="form-group">
+        <label id="emailText">Email</label>
+        <input class="form-control" #emailControl="ngModel" placeholder="Email" [(ngModel)]="email" name="email" maxlength="30" email required email>
+      </div>
+      <div class="form-group">
+        <label id="passwordText">Password</label>
+        <input class="form-control" #passwordControl="ngModel" placeholder="Password" [(ngModel)]="password" name="password" maxlength="30" password required type="password">
+      </div>
+      <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-info"
+        (click)="login()">Sign In
+      </button>
+  </form>
+  </div>
+</div>
