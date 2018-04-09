@@ -1,4 +1,3 @@
-import { Component } from '@angular/core';
 import { Component, HostListener } from '@angular/core';
 import { grid } from '../models/grid.model'
 
@@ -9,11 +8,10 @@ import { grid } from '../models/grid.model'
 })
 
 export class GridComponent {
-  testGrid = new grid();
   gameGrid = new grid();
 
   constructor() {
-    console.log(this.testGrid);
+    console.log(this.gameGrid);
   }
   @HostListener('document:keydown', ['$event'])
   onKeydown(event) {

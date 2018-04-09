@@ -1,10 +1,10 @@
-<div *ngFor="let row of testGrid.board">
 <div *ngFor="let row of gameGrid.board">
   <div class="row">
     <div *ngFor="let col of row">
       <div class="tile">
         {{col.x}}, {{col.y}}
         <div *ngIf="(col.player === true)" style="background-color: red">
+          <h4>It's working!</h4>
         </div>
       </div>
     </div>

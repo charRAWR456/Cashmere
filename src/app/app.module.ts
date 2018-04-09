@@ -28,7 +28,7 @@ import { GameComponent } from './game/game.component';
     GridComponent,
     LoginComponent,
     WelcomeComponent,
-    NavbarComponent
+    NavbarComponent,
     GameComponent
   ],
   imports: [

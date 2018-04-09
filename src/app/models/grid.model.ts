@@ -13,8 +13,6 @@ export class grid {
       this.board[i] = [];
       for (var j = 0; j < this.height; j++) {
         this.board[i][j] = {
-          x: j,
-          y: i,
           y: j,
           x: i,
           player: false,
@@ -28,7 +26,6 @@ export class grid {
   setPlayerPosition(){
     this.board[1][9].player = true;
   }
-
 
   findPlayer() {
     for (let i = 0; i<10; i++) {
