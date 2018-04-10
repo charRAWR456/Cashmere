@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { grid } from '../models/grid.model'
+import { grid } from '../models/grid.model';
 
 @Component({
   selector: 'app-grid',
@@ -50,5 +50,14 @@ export class GridComponent {
     }
     return styles;
   }
-
+  
+  renderEnemy (tile){
+    let styles = {};
+    if (tile.enemy) {
+      styles['background-image'] = 'url(../../assets/image/dot.svg)';
+      // styles['background-size'] = '1000px 1000px';
+      // styles['background-position'] = '';
+    }
+    return styles;
+  }
 }

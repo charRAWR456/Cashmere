@@ -1,0 +1,13 @@
+.tile {
+  border: 1px solid blue;
+  display: block;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.test {
+  width: 100px;
+  height: 100px;
+}

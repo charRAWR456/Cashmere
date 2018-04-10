@@ -3,7 +3,9 @@
     <div *ngFor="let col of row">
       <div class="tile">
         <!-- {{col.x}}, {{col.y}} -->
-        <div class="test" [ngStyle]="renderSprite(col)">
+        <div class="test" [ngStyle]="renderSprite(col)" >
+        </div>
+        <div class="test" [ngStyle]="renderEnemy(col)" >
         </div>
         <!-- <div *ngIf="(col.player === true)" style="background-color: red">
           <h4>It's working!</h4>

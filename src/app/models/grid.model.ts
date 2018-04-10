@@ -6,6 +6,7 @@ export class grid {
   constructor(){
     this.createBoard();
     this.setPlayerPosition();
+    this.setEnemyPosition();
   }
 
   createBoard() {
@@ -15,6 +16,7 @@ export class grid {
         this.board[i][j] = {
           y: j,
           x: i,
+          enemy: false,
           player: false,
           walkable: true,
           spritePath: null //path for the image on this tile
@@ -26,6 +28,10 @@ export class grid {
   setPlayerPosition(){
     this.board[1][9].player = true;
   }
+  setEnemyPosition(){
+    this.board[1][8].enemy = true;
+  }
+
 
   findPlayer() {
     for (let i = 0; i<10; i++) {
