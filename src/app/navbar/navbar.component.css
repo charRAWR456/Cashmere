@@ -1,0 +1,34 @@
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  font-size: 4vw;
+}
+
+.nav-link{
+  font-family: 'Lobster', cursive;
+  font-size: 2.75vw;
+
+}
+
+#navbar {
+  background-color: #404040;
+  width: 100%;
+}
+
+.dropdown-item{
+  font-family: 'Lobster', cursive;
+  font-size: 2.75vw;
+  font-weight: bold;
+}
+
+#loginText{
+  padding-right: 30px;
+}
+
+#logoutText{
+  padding-right: 30px;
+}
+
+
+#brandText {
+  padding-left: 20px;
+}
