@@ -11,39 +11,34 @@ export class GridComponent {
   gameGrid = new grid();
 
   constructor() {
+    console.log(this.gameGrid);
   }
-  
+
   @HostListener('document:keydown', ['$event'])
   onKeydown(event) {
     let playerPosition = this.gameGrid.findPlayer();
 
-    if (event.key === "ArrowLeft" && playerPosition.y !== 0) {
+    if (event.key === "ArrowLeft" && playerPosition.y !== 0 && this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].walkable) {
       this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].player = true;
-      // this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].spritePath = "../../assets/image/dot.svg";
-      // console.log(this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].spritePath);
       playerPosition.player = false;
       this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].direction = "left";
-
     }
-
-    if (event.key === "ArrowRight" && playerPosition.y !== 9) {
+    if (event.key === "ArrowRight" && playerPosition.y !== 9 && (this.gameGrid.board[(playerPosition.x)][playerPosition.y+1]).walkable) {
       this.gameGrid.board[(playerPosition.x)][playerPosition.y+1].player = true;
       playerPosition.player = false;
       this.gameGrid.board[(playerPosition.x)][playerPosition.y+1].direction = "right";
     }
 
-    if (event.key === "ArrowUp" && playerPosition.x !== 0) {
+    if (event.key === "ArrowUp" && playerPosition.x !== 0 && this.gameGrid.board[(playerPosition.x-1)][playerPosition.y].walkable) {
       this.gameGrid.board[(playerPosition.x-1)][playerPosition.y].player = true;
       playerPosition.player = false;
       this.gameGrid.board[(playerPosition.x-1)][playerPosition.y].direction = "up";
     }
-
-    if (event.key === "ArrowDown" && playerPosition.x !== 9) {
+    if (event.key === "ArrowDown" && playerPosition.x !== 9 && this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].walkable) {
       this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].player = true;
       playerPosition.player = false;
       this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].direction = "down";
     }
-
   }
 
   renderSprite (tile){
@@ -68,9 +63,17 @@ export class GridComponent {
       styles['background-size'] = '1152px 768px';
       styles['background-position'] = '4px -101px';
     }
+    if (!tile.walkable) {
+      styles['background-image'] = 'url(../../assets/image/computer.png)'
+      styles['background-size'] = '100% 100%';
+    }
+    if (tile.goal){
+      styles['background-image'] = 'url(../../assets/image/image1.png)'
+      styles['background-size'] = '100% 100%';
+    }
     return styles;
   }
-  
+
   renderEnemy (tile){
     let styles = {};
     if (tile.enemy) {
