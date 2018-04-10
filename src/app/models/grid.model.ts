@@ -1,3 +1,5 @@
+import { Tile } from './tile.model';
+
 export class grid {
   board = [];
   height: number = 10;
@@ -21,6 +23,7 @@ export class grid {
           walkable: true,
           spritePath: null //path for the image on this tile
         };
+        this.board[i][j] = new Tile(i,j);
       }
     }
   }
