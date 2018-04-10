@@ -26,7 +26,7 @@ export class grid {
     this.board[9][1].player = true;
   }
   setEnemyPosition(){
-    this.board[1][8].enemy = true;
+    this.board[9][9].enemy = true;
   }
   setObstacles(){
     this.board[5][2].walkable = false;
