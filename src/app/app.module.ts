@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 //Pipes and Services
 import { AuthenticationService } from './services/authentication.service';
 
+import * as firebase from 'firebase/app';
 
 //Components
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { Routing } from './app.routing';
 import { GameComponent } from './game/game.component';
 import { EnemyComponent } from './enemy/enemy.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [

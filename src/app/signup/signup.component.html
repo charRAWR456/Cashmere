@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="signupContainer">
+    <form #signupForm="ngForm">
+      <h1 class="signup-title" id="signupText">Sign Up</h1>
+      <div class="form-group">
+        <label id="signupEmailText">Email</label>
+        <input class="form-control" #signupEmailControl="ngModel" placeholder="Email" [(ngModel)]="signupEmail" name="signupEmail" maxlength="30" signupEmail required email>
+      </div>
+      <div class="form-group">
+        <label id="signupPasswordText">Password</label>
+        <input class="form-control" #signupPasswordControl="ngModel" placeholder="Password" [(ngModel)]="signupPassword" name="signupPassword" maxlength="30" signupPassword required type="password">
+      </div>
+      <button [disabled]="!signupForm.form.valid" type="submit" class="btn btn-info"
+        (click)="signup()">Sign Up
+      </button>
+  </form>
+  </div>
+</div>
