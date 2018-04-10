@@ -33,7 +33,8 @@ import { SignupComponent } from './signup/signup.component';
     WelcomeComponent,
     NavbarComponent,
     GameComponent,
-    EnemyComponent
+    EnemyComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
