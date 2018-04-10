@@ -73,9 +73,10 @@ export class GridComponent {
       styles['background-position'] = '4px -101px';
     }
     return styles;
+    }
   }
-  
-  renderEnemy (tile){
+
+  renderEnemy(tile){
     let styles = {};
     if (tile.enemy) {
       styles['background-image'] = 'url(../../assets/image/dot.svg)';
