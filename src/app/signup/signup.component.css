@@ -1,0 +1,28 @@
+#signupText {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  color: #313332;
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+.container{
+  margin-bottom: 180px;
+}
+
+.signupContainer{
+  color: #111;
+  margin-top: 12%;
+  background-color: #fbfbfb;
+  width: auto;
+  padding: 10%;
+  border-radius: 3px;
+  box-shadow: #555 1px 1px 8px 1px;
+}
+
+button{
+  height: 60px;
+  margin-top: 20px;
+  width: 100%;
+}

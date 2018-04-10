@@ -34,6 +34,8 @@ import { SignupComponent } from './signup/signup.component';
     NavbarComponent,
     GameComponent,
     EnemyComponent
+    EnemyComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
