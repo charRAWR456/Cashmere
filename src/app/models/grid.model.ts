@@ -17,7 +17,7 @@ export class grid {
           x: i,
           player: false,
           walkable: true,
-          sprite: null //path for the image on this tile
+          spritePath: null //path for the image on this tile
         };
       }
     }

@@ -19,6 +19,8 @@ export class GridComponent {
 
     if (event.key === "ArrowLeft" && playerPosition.y !== 0) {
       this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].player = true;
+      // this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].spritePath = "../../assets/image/dot.svg";
+      // console.log(this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].spritePath);
       playerPosition.player = false;
     }
 
@@ -37,6 +39,16 @@ export class GridComponent {
       playerPosition.player = false;
     }
 
+  }
+
+  renderSprite (tile){
+    let styles = {};
+    if (tile.player) {
+      styles['background-image'] = 'url(../../assets/image/dot.svg)';
+      // styles['background-size'] = '1000px 1000px';
+      // styles['background-position'] = '';
+    }
+    return styles;
   }
 
 }

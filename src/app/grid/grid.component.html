@@ -2,10 +2,12 @@
   <div class="row">
     <div *ngFor="let col of row">
       <div class="tile">
-        {{col.x}}, {{col.y}}
-        <div *ngIf="(col.player === true)" style="background-color: red">
-          <h4>It's working!</h4>
+        <!-- {{col.x}}, {{col.y}} -->
+        <div class="test" [ngStyle]="renderSprite(col)">
         </div>
+        <!-- <div *ngIf="(col.player === true)" style="background-color: red">
+          <h4>It's working!</h4>
+        </div> -->
       </div>
     </div>
   </div>
