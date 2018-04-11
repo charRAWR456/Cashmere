@@ -1,0 +1,28 @@
+
+.jumbotron {
+ background-color: #00b3b4;
+ color: white;
+ font-family: 'Oswald', sans-serif;
+ font-weight: bold;
+ text-align: center;
+ font-weight: bold;
+}
+
+.jumbotron h1 {
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+#jumbotronParagraph {
+  font-size: 2vw;
+}
+
+#aboutEpicodus {
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+#howtoplay{
+  font-size: 2vw;
+  font-weight: bold;
+}
