@@ -7,3 +7,37 @@
   height: 300px;
   width: 300px;
 }
+
+#profileText {
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+  color: #313332;
+  font-size: 5vw;
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+#highscoreText {
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+  color: #313332;
+  font-weight: bold;
+}
+
+.container{
+  margin-bottom: 180px;
+}
+
+.profileContainer{
+  color: #111;
+  margin-top: 5%;
+  background-color: #fbfbfb;
+  width: auto;
+  padding: 10%;
+  border-radius: 3px;
+  box-shadow: #555 1px 1px 8px 1px;
+}
+
+body {
+  background-color: #00b3b4;
+}

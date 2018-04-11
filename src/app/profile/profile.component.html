@@ -1,11 +1,14 @@
+
 <div class="container">
   <div class="profileContainer">
-    <h1>{{ profileName }}</h1>
+    <h1 id="profileText">{{ profileName }}</h1>
+    <h3 id="highscoreText">High Score:</h3>
     <img src="{{ profilePic }}" id="profilePic" alt="">
     <br>
     <button (click)="clickedEdit()" class="btn btn-info">Edit Profile</button>
     <br>
     <form *ngIf="edit" #profileForm="ngForm">
+      <hr>
       <h1 class="profile-title" id="profileText">Update Profile</h1>
       <div class="form-group">
         <label id="profileNameText">Profile Name</label>
