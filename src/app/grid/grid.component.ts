@@ -75,8 +75,9 @@ export class GridComponent {
       styles['background-size'] = '100% 100%';
     }
     if (tile.enemy) {
-      styles['background-image'] = 'url(../../assets/image/dot.svg)';
-      styles['background-size'] = '100% 100%';
+      styles['background-image'] = 'url(../../assets/image/teacher.png)';
+      styles['background-size'] = '1152px 768px';
+      styles['background-position'] = '672px 384px';
     }
     return styles;
   }
