@@ -1,5 +1,7 @@
 <div class="container">
   <div class="profileContainer">
+    <h1>{{ profileName }}</h1>
+    <img src="{{ profilePic }}" id="profilePic" alt="">
     <form #profileForm="ngForm">
       <h1 class="profile-title" id="profileText">Update Profile</h1>
       <div class="form-group">
@@ -10,13 +12,9 @@
         <label id="profileUrlText">Profile Picture</label>
         <input class="form-control" #profilePictureControl="ngModel" placeholder="insert image URL" [(ngModel)]="photoURL" name="profilePicture">
       </div>
-      <button type="submit" class="btn btn-info"
+      <button type="submit" class="btn btn-info" a href="profile"
         (click)="updateProfile()">Update Profile
       </button>
-      <button type="submit" name="button"
-        (click)="getProfileInfo()">View profile details
-      </button>
-
   </form>
   </div>
 </div>

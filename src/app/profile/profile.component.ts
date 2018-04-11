@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Routing } from '../app.routing';
 import { Router } from '@angular/router';
@@ -11,10 +11,12 @@ import { environment } from '../../environments/environment';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
 
   displayName: string;
   photoURL: string;
+  profileName: string;
+  profilePic: string;
 
   constructor(private router: Router) {
   }
@@ -28,9 +30,7 @@ export class ProfileComponent {
       photoURL: this.photoURL
 
     }).then(function() {
-
-      console.log("Update successful")
-
+      
     }).catch(function(error){
       console.log(error)
     });
@@ -38,15 +38,19 @@ export class ProfileComponent {
 
   getProfileInfo(){
     let user = firebase.auth().currentUser;
-    let profileName;
-    let profilePic;
+    console.log(user);
 
     if(user != null) {
-      profileName = user.displayName;
-      profilePic = user.photoURL;
+      this.profileName = user.displayName;
+      this.profilePic = user.photoURL;
 
-      console.log(profileName);
-      console.log(profilePic);
+      console.log(this.profileName);
+      console.log(this.profilePic);
       }
     }
-  }
+
+    ngOnInit() {
+      setTimeout(()=>{this.getProfileInfo()}, 1000);
+
+      }
+    }
