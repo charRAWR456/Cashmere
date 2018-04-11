@@ -42,6 +42,12 @@ export class GridComponent {
       this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].direction = "down";
     }
     this.gameGrid.moveEnemy();
+    if (this.gameGrid.isGameOver()){
+      alert("player hit the enemy");
+    }
+    if (this.gameGrid.playerWon()) {
+      alert("player reached the goal");
+    }
   }
 
   renderSprite (tile){
