@@ -12,6 +12,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 export class GridComponent {
   gameGrid = new grid();
   showDialog = false;
+  showWin = false;
 
   constructor() {
     console.log(this.gameGrid);
@@ -49,7 +50,7 @@ export class GridComponent {
       this.showDialog = true;
     }
     if (this.gameGrid.playerWon()) {
-      this.showDialog = true;
+      this.showWin = true;
     }
   }
 
