@@ -10,4 +10,8 @@
   </div>
 </div>
 <h4 style="text-align: center">Step Count: {{this.gameGrid.counter}}</h4>
-<app-modal *ngIf="gameGrid.isGameOver()"></app-modal>
+
+<app-modal [(visible)]="showDialog">
+  <h1>Get back to studying!</h1>
+  <button (click)="showDialog = !showDialog" class="btn">Replay</button>
+</app-modal>
