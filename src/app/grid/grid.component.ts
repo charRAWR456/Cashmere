@@ -39,6 +39,7 @@ export class GridComponent {
       playerPosition.player = false;
       this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].direction = "down";
     }
+    this.gameGrid.moveEnemy();
   }
 
   renderSprite (tile){
