@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
       photoURL: this.photoURL
 
     }).then(function() {
-      
+      window.location.reload()
     }).catch(function(error){
       console.log(error)
     });
