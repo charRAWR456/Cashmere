@@ -5,6 +5,7 @@ export class grid {
   tiles = [];
   height: number = 10;
   width: number = 10;
+  counter: number = 0;
 
   constructor() {
     this.createBoard();
@@ -26,37 +27,58 @@ export class grid {
   }
 
   setPlayerPosition() {
-    this.board[9][1].player = true;
+    this.board[5][0].player = true;
   }
   setEnemyPosition() {
-    this.board[9][9].enemy = true;
+    this.board[7][6].enemy = true;
   }
   setObstacles() {
-    this.board[5][2].walkable = false;
-    this.board[3][5].walkable = false;
-    this.board[9][0].walkable = false;
+    this.board[0][0].walkable = false;
+    this.board[0][1].walkable = false;
+    this.board[0][2].walkable = false;
+    this.board[0][4].walkable = false;
+    this.board[0][8].walkable = false;
+    this.board[1][4].walkable = false;
+    this.board[1][6].walkable = false;
+    this.board[1][8].walkable = false;
+    this.board[2][1].walkable = false;
     this.board[2][2].walkable = false;
-    this.board[2][2].walkable = false;
-    this.board[3][2].walkable = false;
+    this.board[2][3].walkable = false;
+    this.board[2][4].walkable = false;
+    this.board[2][6].walkable = false;
+    this.board[2][8].walkable = false;
+    this.board[3][6].walkable = false;
+    this.board[4][0].walkable = false;
+    this.board[4][1].walkable = false;
     this.board[4][2].walkable = false;
-    this.board[5][2].walkable = false;
-    this.board[6][2].walkable = false;
-    this.board[3][3].walkable = false;
-    this.board[4][5].walkable = false;
+    this.board[4][3].walkable = false;
+    this.board[4][4].walkable = false;
+    // this.board[4][5].walkable = false;
     this.board[4][6].walkable = false;
     this.board[4][7].walkable = false;
     this.board[4][8].walkable = false;
-    this.board[4][9].walkable = false;
-    this.board[4][3].walkable = false;
+    this.board[5][3].walkable = false;
+    this.board[6][0].walkable = false;
+    this.board[6][1].walkable = false;
+    this.board[6][3].walkable = false;
+    this.board[6][5].walkable = false;
+    this.board[6][6].walkable = false;
+    this.board[6][7].walkable = false;
+    this.board[6][8].walkable = false;
+    // this.board[6][9].walkable = false;
+    // this.board[7][3].walkable = false;
+    this.board[7][5].walkable = false;
+    this.board[8][1].walkable = false;
+    this.board[8][2].walkable = false;
+    this.board[8][3].walkable = false;
+    this.board[8][5].walkable = false;
     this.board[8][6].walkable = false;
-    this.board[3][8].walkable = false;
-    this.board[1][3].walkable = false;
-    this.board[9][4].walkable = false;
-    this.board[7][1].walkable = false;
-    this.board[7][8].walkable = false;
+    this.board[8][7].walkable = false;
+    this.board[8][8].walkable = false;
+
   }
   setGoal() {
-    this.board[0][9].goal = true;
+    this.board[0][3].goal = true;
   }
 
   findPlayer() {

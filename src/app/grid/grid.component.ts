@@ -17,6 +17,8 @@ export class GridComponent {
   @HostListener('document:keydown', ['$event'])
   onKeydown(event) {
     let playerPosition = this.gameGrid.findPlayer();
+    this.gameGrid.counter += 1;
+    console.log(this.gameGrid.counter);
 
     if (event.key === "ArrowLeft" && playerPosition.y !== 0 && this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].walkable) {
       this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].player = true;
