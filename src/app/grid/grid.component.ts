@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { grid } from '../models/grid.model';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-grid',
@@ -9,6 +11,7 @@ import { grid } from '../models/grid.model';
 
 export class GridComponent {
   gameGrid = new grid();
+  showDialog = false;
 
   constructor() {
     console.log(this.gameGrid);
@@ -42,10 +45,10 @@ export class GridComponent {
     }
     this.gameGrid.moveEnemy();
     if (this.gameGrid.isGameOver()){
-      alert("player hit the enemy");
+      this.showDialog = true;
     }
     if (this.gameGrid.playerWon()) {
-      alert("player reached the goal");
+      this.showDialog = true;
     }
   }
 
