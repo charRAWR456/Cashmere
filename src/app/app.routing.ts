@@ -10,6 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ModalComponent } from './modal/modal.component';
 import { ProfileComponent } from './profile/profile.component';
 
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
     path: 'profile',
     component: ProfileComponent
   }
+
 ];
 
 export const Routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
