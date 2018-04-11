@@ -52,24 +52,24 @@ export class GridComponent {
   renderSprite (tile){
     let styles = {};
     if (tile.player && tile.direction === "down") {
-      styles['background-image'] = 'url(../../assets/image/cats.png)';
-      styles['background-size'] = '1152px 768px';
-      styles['background-position'] = '0px -4px';
+      styles['background-image'] = 'url(../../assets/image/student.png)';
+      styles['background-size'] = '1152px 780px';
+      styles['background-position'] = '576px 0px';
     }
     if (tile.player && tile.direction === "up") {
-      styles['background-image'] = 'url(../../assets/image/cats.png)';
-      styles['background-size'] = '1152px 768px';
-      styles['background-position'] = '0px -294px';
+      styles['background-image'] = 'url(../../assets/image/student.png)';
+      styles['background-size'] = '1152px 780px';
+      styles['background-position'] = '576px -292.8px';
     }
     if (tile.player && tile.direction === "right") {
-      styles['background-image'] = 'url(../../assets/image/cats.png)';
-      styles['background-size'] = '1152px 768px';
-      styles['background-position'] = '0px -197px';
+      styles['background-image'] = 'url(../../assets/image/student.png)';
+      styles['background-size'] = '1152px 780px';
+      styles['background-position'] = '576px -195px';
     }
     if (tile.player && tile.direction === "left") {
-      styles['background-image'] = 'url(../../assets/image/cats.png)';
-      styles['background-size'] = '1152px 768px';
-      styles['background-position'] = '4px -101px';
+      styles['background-image'] = 'url(../../assets/image/student.png)';
+      styles['background-size'] = '1152px 785px';
+      styles['background-position'] = '576px -98.7px';
     }
     if (!tile.walkable) {
       styles['background-image'] = 'url(../../assets/image/computer.png)'
