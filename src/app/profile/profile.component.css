@@ -1,0 +1,9 @@
+#profilePic{
+  border: 5px solid white;
+  box-shadow: #555 1px 1px 8px 1px;
+  display: block;
+  margin-top: 30px;
+  max-width: 100%;
+  height: 300px;
+  width: 300px;
+}
