@@ -103,7 +103,6 @@ export class GridComponent {
       styles['background-size'] = '1152px 780px';
       styles['background-position'] = '672px 292.5px';
     }
-
     return styles;
   }
 }

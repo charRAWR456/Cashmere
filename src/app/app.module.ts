@@ -26,7 +26,7 @@ import { GameComponent } from './game/game.component';
 import { EnemyComponent } from './enemy/enemy.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
-import { Modal } from './modal./modal.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
