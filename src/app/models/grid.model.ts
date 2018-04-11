@@ -27,11 +27,8 @@ export class grid {
   }
 
   setPlayerPosition() {
-<<<<<<< HEAD
+
     this.board[5][0].player = true;
-=======
-    this.board[0][1].player = true;
->>>>>>> test
   }
   setEnemyPosition() {
     this.board[7][6].enemy = true;
