@@ -1,3 +1,12 @@
+<div class="row">
+  <div class="col">
+    <h3 id="level">Level: 1</h3>
+  </div>
+  <div class="col">
+    <h3 id="step">Step Counter: {{this.gameGrid.counter}}</h3>
+  </div>
+</div>
+<hr>
 <div *ngFor="let row of gameGrid.board">
   <div class="row">
     <div *ngFor="let col of row">
@@ -9,15 +18,16 @@
     </div>
   </div>
 </div>
-<h4 style="text-align: center">Step Count: {{this.gameGrid.counter}}</h4>
 
 <app-modal [(visible)]="showDialog">
   <img src="../../assets/image/john.png" alt="john"><br>
-  <h1>Get back to studying!</h1>
-  <button (click)="showDialog = !showDialog" class="btn">Replay</button>
+  <h1>Get back to studying!</h1><br>
+  Your Grade: F
+  <button (click)="showDialog = !showDialog" class="btn" id="replay">Replay</button>
 </app-modal>
 <app-modal [(visible)]="showWin">
     <img src="../../assets/image/mindy.png" alt="mindy"><br>
-  <h1>You found my Cashmere!!!</h1>
-  <button (click)="showWin = !showWin" class="btn">Replay</button>
+  <h1>You found my Cashmere!!!</h1><br>
+  Your Grade: {{this.gameGrid.studentGrade}} | Your Steps: {{this.gameGrid.counter}} | Step Goal: 34
+  <button (click)="showWin = !showWin" class="btn" id="replay">Replay</button>
 </app-modal>

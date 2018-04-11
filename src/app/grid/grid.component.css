@@ -12,6 +12,14 @@
   height: 100px;
 }
 
-/*.row {
+#level{
+  color: lightyellow;
+}
+#step{
+  color: lightyellow;
+  float: right;
+}
 
-}*/
+#replay{
+  float: right;
+}

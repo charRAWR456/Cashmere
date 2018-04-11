@@ -22,6 +22,7 @@ export class GridComponent {
   onKeydown(event) {
     let playerPosition = this.gameGrid.findPlayer();
     this.gameGrid.counter += 1;
+    this.playerGrade();
 
     if (event.key === "ArrowLeft" && playerPosition.y !== 0 && this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].walkable) {
       this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].player = true;
@@ -54,6 +55,20 @@ export class GridComponent {
       this.playMeow();
       this.showWin = true;
     }
+  }
+
+  playerGrade(){
+      this.gameGrid.studentGrade = "A"
+      if(this.gameGrid.counter == 35){
+      this.gameGrid.studentGrade = "B"
+    }else if(this.gameGrid.counter == 36 ){
+      this.gameGrid.studentGrade = "C"
+    }else if(this.gameGrid.counter == 37 ){
+    this.gameGrid.studentGrade = "D"
+  }else if(this.gameGrid.counter >= 38 ){
+      this.gameGrid.studentGrade = "F"
+    }
+    return this.gameGrid.studentGrade;
   }
 
   playMeow(){
