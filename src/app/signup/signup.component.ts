@@ -16,7 +16,7 @@ export class SignupComponent {
   signupEmail : string;
   signupPassword: string;
 
-  constructor( private router: Router) { }
+  constructor(private router: Router) { }
 
   signup() {
     firebase.initializeApp(environment.firebase);

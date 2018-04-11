@@ -24,6 +24,7 @@ import { Routing } from './app.routing';
 import { GameComponent } from './game/game.component';
 import { EnemyComponent } from './enemy/enemy.component';
 import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SignupComponent } from './signup/signup.component';
     NavbarComponent,
     GameComponent,
     EnemyComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

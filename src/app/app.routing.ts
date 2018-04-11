@@ -7,6 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { GridComponent } from './grid/grid.component';
 import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
   {
@@ -24,6 +25,10 @@ const appRoutes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   },
 ];
 

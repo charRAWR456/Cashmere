@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="profileContainer">
+    <form #profileForm="ngForm">
+      <h1 class="profile-title" id="profileText">Update Profile</h1>
+      <div class="form-group">
+        <label id="profileNameText">Profile Name</label>
+        <input class="form-control" #profileNameControl="ngModel" [(ngModel)]="displayName" name="profileName" maxlength="15">
+      </div>
+      <div class="form-group">
+        <label id="profileUrlText">Profile Picture</label>
+        <input class="form-control" #profilePictureControl="ngModel" placeholder="insert image URL" [(ngModel)]="photoURL" name="profilePicture">
+      </div>
+      <button type="submit" class="btn btn-info"
+        (click)="updateProfile()">Update Profile
+      </button>
+      <button type="submit" name="button"
+        (click)="getProfileInfo()">View profile details
+      </button>
+
+  </form>
+  </div>
+</div>
