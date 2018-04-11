@@ -26,7 +26,7 @@ export class grid {
   }
 
   setPlayerPosition() {
-    this.board[9][1].player = true;
+    this.board[0][1].player = true;
   }
   setEnemyPosition() {
     this.board[9][9].enemy = true;
@@ -82,6 +82,15 @@ export class grid {
       return this.board[x][y];
     }
   }
+
+  isGameOver() {
+    return (this.findEnemy() == this.findPlayer());
+  }
+
+  playerWon() {
+    return (this.findPlayer() == this.board[0][9]); //if additional levels added w/ different goal positions, may need a findGoal() function
+  }
+
   enemyRadar() {
     // Find Walkable positions for each of the tiles in your openList
     const heads = [];
