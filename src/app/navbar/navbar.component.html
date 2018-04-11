@@ -15,6 +15,9 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li *ngIf="!(user|async)?.uid" class="nav-item active">
+      <a class="nav-link"  routerLink="signup" id="signupText">Sign Up<span class="sr-only"></span></a>
+      </li>
+      <li *ngIf="!(user|async)?.uid" class="nav-item active">
       <a class="nav-link"  routerLink="login" id="loginText">Login<span class="sr-only"></span></a>
       </li>
       <li *ngIf="(user|async)?.uid" class="nav-item active">

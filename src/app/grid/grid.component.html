@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col">
     <h3 id="level">Level: 1</h3>
@@ -7,6 +8,9 @@
   </div>
 </div>
 <hr>
+
+<div class="container" id="grid-container">
+
 <div *ngFor="let row of gameGrid.board">
   <div class="row">
     <div *ngFor="let col of row">
@@ -31,3 +35,4 @@
   Your Grade: {{this.gameGrid.studentGrade}} | Your Steps: {{this.gameGrid.counter}} | Step Goal: 34
   <button (click)="showWin = !showWin" class="btn" id="replay">Replay</button>
 </app-modal>
+</div>
