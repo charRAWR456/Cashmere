@@ -6,6 +6,7 @@ export class grid {
   height: number = 10;
   width: number = 10;
   counter: number = 0;
+  enemyLastMove: Tile;
 
   constructor() {
     this.createBoard();
@@ -198,13 +199,15 @@ export class grid {
       tile.previous = null;
     });
 
-    console.log("move", bestMove);
+    // console.log("move", bestMove);
     // Return the best move
     return bestMove;
   }
 
   moveEnemy() {
     // Get the best new position
+    this.enemyLastMove = this.findEnemy();
+
     const bestMove = this.enemyRadar();
     // Get the current position
     const enemy = this.findEnemy();
@@ -219,4 +222,20 @@ export class grid {
 
     return gridSize;
   }
+
+  getEnemyDirection() {
+    let enemyTile = this.findEnemy();
+    if (this.enemyLastMove.y > enemyTile.y) {
+      enemyTile.enemyDirection = "left";
+    } else if (this.enemyLastMove.y < enemyTile.y) {
+      enemyTile.enemyDirection = "right";
+    } else if (this.enemyLastMove.x > enemyTile.x) {
+      enemyTile.enemyDirection = "up";
+    } else if (this.enemyLastMove.x < enemyTile.x) {
+      enemyTile.enemyDirection = "down";
+    }
+  }
+
+
+
 }

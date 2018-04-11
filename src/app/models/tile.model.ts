@@ -8,7 +8,8 @@ export class Tile {
     public goal:boolean=false,
     public walkable:boolean=true,
     public spritePath:string=null,
-    public direction:string="down"
+    public direction:string="down",
+    public enemyDirection:string="down"
   ){}
 
 }
