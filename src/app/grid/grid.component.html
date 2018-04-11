@@ -12,14 +12,14 @@
 </div>
 <h4 style="text-align: center">Step Count: {{this.gameGrid.counter}}</h4>
 
-<app-modal [(visible)]="showDialog">
+<app-modal [(visible)]="showDialog" [(reset())]="childReset()">
   <img src="../../assets/image/john.png" alt="john"><br>
   <h1>Get back to studying!</h1>
-  <button (click)="showDialog = !showDialog" class="btn">Replay</button>
+  <button (click)="showDialog = !showDialog; childReset = !childReset" class="btn">Replay</button>
 </app-modal>
-<app-modal [(visible)]="showWin">
+<app-modal [(visible)]="showWin" [(reset())]="childReset()">
     <img src="../../assets/image/mindy.png" alt="mindy"><br>
   <h1>You found my Cashmere!!!</h1>
-  <button (click)="showWin = !showWin" class="btn">Replay</button>
+  <button (click)="showWin = !showWin; childReset = !childReset" class="btn">Replay</button>
 </app-modal>
 </div>

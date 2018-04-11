@@ -1,7 +1,8 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Output, EventEmitter } from '@angular/core';
 import { grid } from '../models/grid.model';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-grid',
@@ -13,6 +14,7 @@ export class GridComponent {
   gameGrid = new grid();
   showDialog = false;
   showWin = false;
+  childReset = false;
 
   constructor() {
     console.log(this.gameGrid);
@@ -20,6 +22,11 @@ export class GridComponent {
 
   @HostListener('document:keydown', ['$event'])
   onKeydown(event) {
+    if (this.childReset === true) {
+      let newGrid = new grid();
+      this.gameGrid = newGrid;
+      this.childReset = false;
+    }
     let playerPosition = this.gameGrid.findPlayer();
     this.gameGrid.counter += 1;
 
@@ -54,6 +61,7 @@ export class GridComponent {
       this.playMeow();
       this.showWin = true;
     }
+
   }
 
   playMeow(){
@@ -119,5 +127,10 @@ export class GridComponent {
       styles['background-position'] = '672px 292.5px';
     }
     return styles;
+  }
+  resetGame() {
+  // if (this.childReset === true) {
+    // let newGrid = new grid();
+    // this.gameGrid = newGrid;
   }
 }

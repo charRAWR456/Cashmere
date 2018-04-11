@@ -21,13 +21,17 @@ import {
 export class ModalComponent implements OnInit {
     @Input() closable = true;
     @Input() visible: boolean;
+    @Input() reset: boolean;
     @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() resetGrid: EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit() {
   }
   close() {
       this.visible = false;
+      this.reset = true;
       this.visibleChange.emit(this.visible);
+      this.resetGrid.emit(this.reset);
     }
 }
