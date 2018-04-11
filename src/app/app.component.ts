@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   showDialog = false;
+  showWin = false;
 }
