@@ -42,7 +42,6 @@ export class GridComponent {
     }
     this.gameGrid.moveEnemy();
     this.gameGrid.getEnemyDirection();
-    console.log(this.gameGrid.enemyDirection);
     if (this.gameGrid.isGameOver()){
       alert("player hit the enemy");
     }
@@ -81,11 +80,27 @@ export class GridComponent {
       styles['background-image'] = 'url(../../assets/image/image1.png)'
       styles['background-size'] = '100% 100%';
     }
-    if (tile.enemy) {
+    if (tile.enemy && tile.enemyDirection === "down") {
       styles['background-image'] = 'url(../../assets/image/teacher.png)';
       styles['background-size'] = '1152px 768px';
       styles['background-position'] = '672px 384px';
     }
+    if (tile.enemy && tile.enemyDirection === "up") {
+      styles['background-image'] = 'url(../../assets/image/teacher.png)';
+      styles['background-size'] = '1152px 790px';
+      styles['background-position'] = '672px 98px';
+    }
+    if (tile.enemy && tile.enemyDirection === "right") {
+      styles['background-image'] = 'url(../../assets/image/teacher.png)';
+      styles['background-size'] = '1152px 780px';
+      styles['background-position'] = '672px 195px';
+    }
+    if (tile.enemy && tile.enemyDirection === "left") {
+      styles['background-image'] = 'url(../../assets/image/teacher.png)';
+      styles['background-size'] = '1152px 780px';
+      styles['background-position'] = '672px 292.5px';
+    }
+
     return styles;
   }
 }

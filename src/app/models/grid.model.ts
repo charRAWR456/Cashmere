@@ -7,7 +7,6 @@ export class grid {
   width: number = 10;
   counter: number = 0;
   enemyLastMove: Tile;
-  enemyDirection: string = "down";
 
   constructor() {
     this.createBoard();
@@ -227,13 +226,13 @@ export class grid {
   getEnemyDirection() {
     let enemyTile = this.findEnemy();
     if (this.enemyLastMove.y > enemyTile.y) {
-      this.enemyDirection = "left";
+      enemyTile.enemyDirection = "left";
     } else if (this.enemyLastMove.y < enemyTile.y) {
-      this.enemyDirection = "right";
+      enemyTile.enemyDirection = "right";
     } else if (this.enemyLastMove.x > enemyTile.x) {
-      this.enemyDirection = "up";
+      enemyTile.enemyDirection = "up";
     } else if (this.enemyLastMove.x < enemyTile.x) {
-      this.enemyDirection = "down";
+      enemyTile.enemyDirection = "down";
     }
   }
 
