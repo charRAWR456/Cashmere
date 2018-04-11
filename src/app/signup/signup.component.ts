@@ -19,7 +19,6 @@ export class SignupComponent {
   constructor(private router: Router) { }
 
   signup() {
-    firebase.initializeApp(environment.firebase);
     firebase.auth().createUserWithEmailAndPassword(this.signupEmail, this.signupPassword)
       .then(resolve => this.router.navigate(['login']))
       .catch(error => error.message
