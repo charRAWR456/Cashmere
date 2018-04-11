@@ -47,11 +47,25 @@ export class GridComponent {
     this.gameGrid.moveEnemy();
     this.gameGrid.getEnemyDirection();
     if (this.gameGrid.isGameOver()){
+      this.playCaught();
       this.showDialog = true;
     }
     if (this.gameGrid.playerWon()) {
+      this.playMeow();
       this.showWin = true;
     }
+  }
+
+  playMeow(){
+    let meow = new Audio('../../assets/SFX/meow.mp3');
+    meow.load();
+    meow.play();
+  }
+
+  playCaught(){
+    let caught = new Audio('../../assets/SFX/Damage.mp3');
+    caught.load();
+    caught.play();
   }
 
   renderSprite (tile){

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 
 @Component({
@@ -10,4 +10,15 @@ export class AppComponent {
   title = 'app';
   showDialog = false;
   showWin = false;
+  audio = new Audio();
+  ngOnInit() {
+    this.playSong();
+}
+
+ playSong() {
+    this.audio.src = "../assets/SFX/feeling_happy.mp3";
+    this.audio.load();
+    this.audio.play();
+ }
+
 }
