@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { GridComponent } from './grid/grid.component';
 import { SignupComponent } from './signup/signup.component';
 import { ModalComponent } from './modal/modal.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const appRoutes: Routes = [
@@ -30,7 +31,12 @@ const appRoutes: Routes = [
   {
     path: 'modal',
     component: ModalComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   }
+
 ];
 
 export const Routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

@@ -38,7 +38,8 @@ import { ModalComponent } from './modal/modal.component';
     GameComponent,
     EnemyComponent,
     SignupComponent,
-    ModalComponent
+    ModalComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

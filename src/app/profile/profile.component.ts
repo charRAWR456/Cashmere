@@ -18,7 +18,13 @@ export class ProfileComponent implements OnInit {
   profileName: string;
   profilePic: string;
 
+  edit: boolean=false;
+
   constructor(private router: Router) {
+  }
+
+  clickedEdit(){
+    this.edit=true;
   }
 
   updateProfile(){
@@ -34,6 +40,7 @@ export class ProfileComponent implements OnInit {
     }).catch(function(error){
       console.log(error)
     });
+    this.edit=false;
   }
 
   getProfileInfo(){
