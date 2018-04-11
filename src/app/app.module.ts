@@ -28,6 +28,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ModalComponent } from './modal/modal.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { ModalComponent } from './modal/modal.component';
     SignupComponent,
     ModalComponent,
     ProfileComponent
+
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ export class grid {
   height: number = 10;
   width: number = 10;
   counter: number = 0;
+  studentGrade: string;
   enemyLastMove: Tile;
 
   constructor() {

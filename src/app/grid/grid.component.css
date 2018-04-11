@@ -12,6 +12,14 @@
   height: 100px;
 }
 
+#level{
+  color: lightyellow;
+}
+#step{
+  color: lightyellow;
+  float: right;
+}
+
 #grid-container {
   background-color: #00b3b4;
   max-width: 1010px;
@@ -19,6 +27,6 @@
   margin-top: 10px;
 }
 
-/*.row {
-
-}*/
+#replay{
+  float: right;
+}
