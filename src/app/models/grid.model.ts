@@ -100,6 +100,15 @@ export class grid {
       }
     }
   }
+  findGoal() {
+    for (let i = 0; i < 10; i++) {
+      for (let j = 0; j < 10; j++) {
+        if (this.board[i][j].goal === true) {
+          return this.board[i][j];
+        }
+      }
+    }
+  }
   findTile(x: number, y: number) {
     if (x >= 0 && y >= 0 && this.board.length > x && this.board[x].length > y) {
       return this.board[x][y];
@@ -111,7 +120,7 @@ export class grid {
   }
 
   playerWon() {
-    return (this.findPlayer() == this.board[0][9]); //if additional levels added w/ different goal positions, may need a findGoal() function
+    return (this.findPlayer() == this.findGoal()); //if additional levels added w/ different goal positions, may need a findGoal() function
   }
 
   enemyRadar() {
