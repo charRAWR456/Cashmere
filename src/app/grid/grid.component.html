@@ -1,3 +1,4 @@
+<div class="container" id="grid-container">
 <div *ngFor="let row of gameGrid.board">
   <div class="row">
     <div *ngFor="let col of row">
@@ -21,3 +22,4 @@
   <h1>You found my Cashmere!!!</h1>
   <button (click)="showWin = !showWin" class="btn">Replay</button>
 </app-modal>
+</div>

@@ -12,6 +12,13 @@
   height: 100px;
 }
 
+#grid-container {
+  background-color: #00b3b4;
+  max-width: 1010px;
+  border: 5px solid #404040;
+  margin-top: 10px;
+}
+
 /*.row {
 
 }*/
