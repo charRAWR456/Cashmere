@@ -41,6 +41,8 @@ export class GridComponent {
       this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].direction = "down";
     }
     this.gameGrid.moveEnemy();
+    this.gameGrid.getEnemyDirection();
+    console.log(this.gameGrid.enemyDirection);
     if (this.gameGrid.isGameOver()){
       alert("player hit the enemy");
     }
