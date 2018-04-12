@@ -13,6 +13,10 @@
       <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-info"
         (click)="login()">Sign In
       </button>
+    <div *ngIf="isError">
+      <h3 id="errorText">Sorry, but the credentials you provided were incorrect. Please try again.</h3>
+
+    </div>
   </form>
   </div>
 </div>

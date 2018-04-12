@@ -6,7 +6,12 @@
 ## Description
 User will play as a student at a bootcamp that wants to take a break to pet the school mascot, the amazing scottish fold Cashmere. You as the student must escape the teachers wrath and make it to Cashmere before you are caught. If you successfully make it to Cashmere you can graduate early! :)
 
+
 ## Setup
+[Play the game here.](https://cashmere-4b510.firebaseapp.com/)
+
+or
+
 1. Make sure you have Angular, Node.js and npm installed
 2. Clone this repository
 3. Open project in editor of your choice

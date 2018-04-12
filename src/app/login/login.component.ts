@@ -12,14 +12,14 @@ export class LoginComponent {
 
   email: string;
   password: string;
-  errorMsg: "Sorry, but the credentials you provided are incorrect. Please try again.";
+  isError = false;
 
   constructor(private authService: AuthenticationService, private router: Router) { }
 
   login() {
     this.authService.login({ email: this.email, password: this.password})
       .then(resolve => this.router.navigate(['grid']))
-      .catch(error => error.message
+      .catch(error => this.isError = true
     );
   }
 }
