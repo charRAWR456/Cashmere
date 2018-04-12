@@ -36,6 +36,13 @@
   margin-top: 45px;
 }
 
+#img:hover {
+  -moz-box-shadow: 0 0 30px #ccc;
+	-webkit-box-shadow: 0 0 30px #ccc;
+	box-shadow: 0 0 30px #ccc;
+  opacity: 0.8;
+}
+
 .container{
   margin-bottom: 180px;
 }
