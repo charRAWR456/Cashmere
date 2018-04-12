@@ -2,6 +2,8 @@ import { Component, HostListener } from '@angular/core';
 import { grid } from '../models/grid.model';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ScoreService } from "../services/score.service";
+
 
 @Component({
   selector: 'app-grid',
@@ -14,7 +16,7 @@ export class GridComponent {
   showDialog = false;
   showWin = false;
 
-  constructor() {
+  constructor(private authService: ScoreService) {
     console.log(this.gameGrid);
   }
 
