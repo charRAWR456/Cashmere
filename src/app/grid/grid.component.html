@@ -9,8 +9,6 @@
 </div>
 <hr>
 
-
-
 <div *ngFor="let row of gameGrid.board">
   <div class="row">
     <div *ngFor="let col of row">
@@ -27,12 +25,12 @@
   <img src="../../assets/image/john.png" alt="john"><br>
   <h1>Get back to studying!</h1><br>
   Your Grade: F
-  <button (click)="showDialog = !showDialog" class="btn" id="replay">Replay</button>
+  <button (click)="showDialog = !showDialog; reset()" class="btn" id="replay">Replay</button>
 </app-modal>
 <app-modal [(visible)]="showWin">
     <img src="../../assets/image/mindy.png" alt="mindy"><br>
   <h1>You found my Cashmere!!!</h1><br>
   Your Grade: {{this.gameGrid.studentGrade}} | Your Steps: {{this.gameGrid.counter}} | Step Goal: 34
-  <button (click)="showWin = !showWin" class="btn" id="replay">Replay</button>
+  <button (click)="showWin = !showWin; reset()" class="btn" id="replay">Replay</button>
 </app-modal>
 </div>

@@ -27,9 +27,7 @@ export class grid {
       }
     }
   }
-
   setPlayerPosition() {
-
     this.board[5][0].player = true;
   }
   setEnemyPosition() {
@@ -236,7 +234,4 @@ export class grid {
       enemyTile.enemyDirection = "down";
     }
   }
-
-
-
 }
