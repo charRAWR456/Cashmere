@@ -24,7 +24,7 @@
 <app-modal [(visible)]="showDialog">
   <img src="../../assets/image/john.png" alt="john"><br>
   <h1>Get back to studying!</h1><br>
-  Your Grade: F | Your Steps: {{this.gameGrid.counter}} | Step Goal: 34
+  Your Grade: F | Your Steps: {{this.gameGrid.counter}}
   <button (click)="showDialog = !showDialog; reset()" class="btn" id="replay">Replay</button>
 </app-modal>
 <app-modal [(visible)]="showWin">
