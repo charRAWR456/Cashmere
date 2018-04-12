@@ -1,7 +1,8 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input, Output } from '@angular/core';
 import { grid } from '../models/grid.model';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @Component({
   selector: 'app-grid',
@@ -57,19 +58,23 @@ export class GridComponent {
     }
   }
 
+  reset() {
+    this.gameGrid = new grid();
+  }
+
   playerGrade(){
-      this.gameGrid.studentGrade = "A"
-      if(this.gameGrid.counter == 35){
+    this.gameGrid.studentGrade = "A"
+    if(this.gameGrid.counter == 35){
       this.gameGrid.studentGrade = "B"
     }else if(this.gameGrid.counter == 36 ){
       this.gameGrid.studentGrade = "C"
     }else if(this.gameGrid.counter == 37 ){
     this.gameGrid.studentGrade = "D"
-  }else if(this.gameGrid.counter >= 38 ){
+    }else if(this.gameGrid.counter >= 38 ){
       this.gameGrid.studentGrade = "F"
     }
     return this.gameGrid.studentGrade;
-  }
+    }
 
   playMeow(){
     let meow = new Audio('../../assets/SFX/meow.mp3');
