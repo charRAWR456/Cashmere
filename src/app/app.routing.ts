@@ -9,7 +9,7 @@ import { GridComponent } from './grid/grid.component';
 import { SignupComponent } from './signup/signup.component';
 import { ModalComponent } from './modal/modal.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { AuthenticationGuard } from './services/authentication-guard.service'
 
 const appRoutes: Routes = [
   {
@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'grid',
-    component: GridComponent
+    component: GridComponent, canActivate: [AuthenticationGuard]
   },
   {
     path: 'signup',
@@ -34,7 +34,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent, canActivate: [AuthenticationGuard]
   }
 
 ];
