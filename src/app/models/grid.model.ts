@@ -132,7 +132,6 @@ export class grid {
     let bestMove;
     heads.push(enemy);
 
-
     // Almost A*, Breadth First Search
 
     // Loops over a list of available moves called heads, looking for new moves during each loop.
