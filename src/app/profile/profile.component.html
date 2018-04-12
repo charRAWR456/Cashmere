@@ -1,11 +1,23 @@
 
 <div class="container">
   <div class="profileContainer">
-    <h1 id="profileText">{{ profileName }}</h1>
-    <h3 id="highscoreText">High Score:</h3>
-    <img src="{{ profilePic }}" id="profilePic" alt="">
-    <br>
-    <button (click)="clickedEdit()" class="btn btn-info">Edit Profile</button>
+    <div class="row">
+      <div class="col-md-6">
+        <h1 id="profileText">{{ profileName }}</h1>
+        <h3 id="highscoreText">High Score:</h3>
+        <img src="{{ profilePic }}" id="profilePic" alt="">
+
+        <br>
+        <button (click)="clickedEdit()" class="btn btn-info">Edit Profile</button>
+      </div>
+
+      <div class="col-md-6">
+        <h3 id="bioText">Bio: </h3>
+        <p>Lorem ipsum dolor sit amet, iaculis amet amet convallis, tristique et blandit nam est exercitationem. Magna aliquet malesuada amet. Non phasellus nonummy, soluta eros et, et lacus in ut tristique, malesuada vel condimentum lacus ut amet non, nunc libero ut neque orci. Etiam vehicula porta turpis nunc a ante, quisque in. Amet id magna, sollicitudin pretium erat ultrices, ut massa adipiscing orci orci odio turpis. Id pellentesque aliquam id diam sollicitudin, ante sit dapibus, arcu dictum aliquet placerat molestie.</p>
+
+        <p>Vel dolor aliquam in consequat venenatis dictum, nunc vel, laborum praesent eros tincidunt nam, sem laoreet nullam tellus. Proin arcu ad metus dui. Vestibulum placerat luctus eget, ultrices molestie purus eleifend sit. Minima nunc faucibus, vitae dui sit vitae, sapien consectetuer tristique massa nulla, nulla ut adipiscing integer porttitor, ut turpis vitae. Sapien quisque eu dui natoque vitae odio. Leo et pellentesque, vestibulum auctor volutpat vestibulum magna a tellus.</p>
+      </div>
+    </div>
     <br>
     <form *ngIf="edit" #profileForm="ngForm">
       <hr>
@@ -19,8 +31,8 @@
         <input class="form-control" #profilePictureControl="ngModel" placeholder="insert image URL" [(ngModel)]="photoURL" name="profilePicture">
       </div>
       <button type="submit" class="btn btn-info" a href="profile"
-        (click)="updateProfile()">Update Profile
-      </button>
+      (click)="updateProfile()">Update Profile
+    </button>
   </form>
-  </div>
+</div>
 </div>
