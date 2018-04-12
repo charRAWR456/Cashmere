@@ -1,27 +1,30 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
+
+export class Score {
+  body: number;
+}
 
 @Injectable()
 export class ScoreService {
 
   score: FirebaseListObservable<any>;
-  players: FirebaseListObservable<any>;
-  currentPlayer: FirebaseObjectObservable<any>;
+  userId: string;
 
-  constructor(private db: AngularFireDatabase) {
-    this.score = this.db.list('score');
+  constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) {
+    this.afAuth.authState.subscribe(user =>{
+      if(user) this.userId = user.uid
+    })
   }
 
-  createPlayer(userId: string, username: string){
-    let newPlayer = {
-      uid: userId,
-      score: 0,
-    }
-    this.players.push(newPlayer)
-    .then(snap=>{
-      this.currentPlayer = this.db.object('players/' + snap.key);
-    })
+  getHighScore(): FirebaseListObservable<Number[]>{
+    if (!this.userId) return;
+    this.score = this.db.list(`score/${this.userId}`);
+  }
+
+  createScore(score: Score){
+    this.score.push(score)
   }
 
 }
