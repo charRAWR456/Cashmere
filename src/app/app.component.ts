@@ -15,10 +15,10 @@ export class AppComponent {
     this.playSong();
 }
 
- playSong() {
+  playSong() {
     this.audio.src = "../assets/SFX/feeling_happy.mp3";
     this.audio.load();
     this.audio.play();
+    this.audio.loop = true;
  }
-
 }
