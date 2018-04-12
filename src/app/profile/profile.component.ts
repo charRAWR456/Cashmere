@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Routing } from '../app.routing';
 import { Router } from '@angular/router';
@@ -17,7 +17,6 @@ export class ProfileComponent implements OnInit {
   photoURL: string;
   profileName: string;
   profilePic: string;
-
   edit: boolean=false;
 
   constructor(private router: Router) {

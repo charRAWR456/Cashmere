@@ -28,6 +28,16 @@
   margin-top: 10px;
 }
 
+#current-best-grade {
+  color: lightyellow;
+  text-align: center;
+}
+
+#score-color {
+  font-weight: bold;
+  color: lightyellow;
+}
+
 #replay{
   float: right;
 }

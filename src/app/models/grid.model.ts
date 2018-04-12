@@ -7,6 +7,8 @@ export class grid {
   width: number = 10;
   counter: number = 0;
   studentGrade: string;
+  currentBestScore: number = 100;
+  currentBestGrade: string = "F";
   enemyLastMove: Tile;
 
   constructor() {
@@ -30,11 +32,11 @@ export class grid {
   setPlayerPosition() {
     this.board[5][0].player = true;
   }
-  removepPlayerFromGoal() {
+  removePlayerFromGoal() {
     this.board[0][3].player = false;
   }
   setEnemyPosition() {
-    this.board[7][6].enemy = true;
+    this.board[7][7].enemy = true;
   }
   setObstacles() {
     this.board[0][0].walkable = false;

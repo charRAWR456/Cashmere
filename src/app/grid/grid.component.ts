@@ -16,7 +16,6 @@ export class GridComponent {
   showWin = false;
 
   constructor() {
-    console.log(this.gameGrid);
   }
 
   @HostListener('document:keydown', ['$event'])
@@ -46,6 +45,7 @@ export class GridComponent {
       playerPosition.player = false;
       this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].direction = "down";
     }
+    //Below code is to ensure player and enemy don't switch tiles.
     if (this.gameGrid.findPlayer() === this.gameGrid.findEnemy()) {
       this.playCaught();
       this.showDialog = true;
@@ -57,14 +57,19 @@ export class GridComponent {
       this.showDialog = true;
     }
     if (this.gameGrid.playerWon()) {
-      this.gameGrid.removepPlayerFromGoal();
+      this.setCurrentBestScore();
+      this.gameGrid.removePlayerFromGoal();
       this.playMeow();
       this.showWin = true;
     }
   }
 
   reset() {
+    let persistGrade = this.gameGrid.currentBestGrade;
+    let persistScore = this.gameGrid.currentBestScore;
     this.gameGrid = new grid();
+    this.gameGrid.currentBestGrade = persistGrade;
+    this.gameGrid.currentBestScore = persistScore;
   }
 
   playerGrade(){
@@ -78,11 +83,29 @@ export class GridComponent {
       this.gameGrid.studentGrade = "B";
     } else if (this.gameGrid.counter > 34) {
         this.gameGrid.studentGrade = "A";
-    } else if (this.gameGrid.counter === 34) {
+    } else if (this.gameGrid.counter <= 34) {
       this.gameGrid.studentGrade = "A+++";
     }
     return this.gameGrid.studentGrade;
     }
+  setCurrentBestScore() {
+      if (this.gameGrid.counter < this.gameGrid.currentBestScore) {
+        this.gameGrid.currentBestScore = this.gameGrid.counter;
+      }
+      if (this.gameGrid.currentBestScore > 40) {
+        this.gameGrid.currentBestGrade = "F";
+      } else if (this.gameGrid.currentBestScore > 37) {
+        this.gameGrid.currentBestGrade = "D";
+      } else if (this.gameGrid.currentBestScore > 36) {
+        this.gameGrid.currentBestGrade = "C";
+      } else if (this.gameGrid.currentBestScore > 35) {
+        this.gameGrid.currentBestGrade = "B";
+      } else if (this.gameGrid.currentBestScore > 34) {
+          this.gameGrid.currentBestGrade = "A";
+      } else if (this.gameGrid.currentBestScore <= 34) {
+        this.gameGrid.currentBestGrade = "A+++";
+      }
+  }
 
   playMeow(){
     let meow = new Audio('../../assets/SFX/meow.mp3');
