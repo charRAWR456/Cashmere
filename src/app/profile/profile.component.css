@@ -24,6 +24,12 @@
   font-weight: bold;
 }
 
+#bioText {
+  font-family: 'Oswald', sans-serif;
+  color: #313332;
+  font-weight: bold;
+}
+
 .container{
   margin-bottom: 180px;
 }
