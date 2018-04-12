@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ScoreService } from "../services/score.service";
 
-
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
@@ -16,7 +15,7 @@ export class GridComponent {
   showDialog = false;
   showWin = false;
 
-  constructor(private authService: ScoreService) {
+  constructor(private scoreService: ScoreService) {
     console.log(this.gameGrid);
   }
 
@@ -54,6 +53,7 @@ export class GridComponent {
       this.showDialog = true;
     }
     if (this.gameGrid.playerWon()) {
+      this.scoreService.saveScore(this.gameGrid.counter);
       this.playMeow();
       this.showWin = true;
     }

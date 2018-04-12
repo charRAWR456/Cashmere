@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { environment } from '../../environments/environment';
+import { ScoreService } from '../services/score.service';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +14,7 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  userScore: any;
   displayName: string;
   photoURL: string;
   profileName: string;
@@ -20,7 +22,9 @@ export class ProfileComponent implements OnInit {
 
   edit: boolean=false;
 
-  constructor(private router: Router) {
+  user = firebase.auth().currentUser;
+
+  constructor(private router: Router, private scoreService: ScoreService) {
   }
 
   clickedEdit(){
@@ -29,9 +33,8 @@ export class ProfileComponent implements OnInit {
 
   updateProfile(){
 
-    let user = firebase.auth().currentUser;
 
-    user.updateProfile({
+    this.user.updateProfile({
       displayName: this.displayName,
       photoURL: this.photoURL
 
@@ -44,12 +47,11 @@ export class ProfileComponent implements OnInit {
   }
 
   getProfileInfo(){
-    let user = firebase.auth().currentUser;
-    console.log(user);
+    console.log(this.user);
 
-    if(user != null) {
-      this.profileName = user.displayName;
-      this.profilePic = user.photoURL;
+    if(this.user != null) {
+      this.profileName = this.user.displayName;
+      this.profilePic = this.user.photoURL;
 
       console.log(this.profileName);
       console.log(this.profilePic);
@@ -57,7 +59,9 @@ export class ProfileComponent implements OnInit {
     }
 
     ngOnInit() {
+      firebase.auth().currentUser;
       setTimeout(()=>{this.getProfileInfo()}, 1000);
+      setTimeout(()=>{this.userScore = this.scoreService.getHighScore(this.user.uid)}, 1000);
 
       }
     }

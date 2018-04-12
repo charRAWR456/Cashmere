@@ -35,4 +35,12 @@
   Your Grade: {{this.gameGrid.studentGrade}} | Your Steps: {{this.gameGrid.counter}} | Step Goal: 34
   <button (click)="showWin = !showWin" class="btn" id="replay">Replay</button>
 </app-modal>
+<div class="form-group">
+  <!-- <label>Score</label>
+  <input #userScore class="form-control"> -->
+
+<button class="btn btn-info"
+  (click)="scoreService.saveScore(gameGrid.counter)">new score
+</button>
+</div>
 </div>
