@@ -64,6 +64,11 @@ export class GridComponent {
     }
   }
 
+  setMoonwalk () {
+    this.gameGrid.moonwalk = !this.gameGrid.moonwalk;
+    this.toggleBillieJean();
+  }
+
   reset() {
     let persistGrade = this.gameGrid.currentBestGrade;
     let persistScore = this.gameGrid.currentBestScore;
@@ -107,6 +112,18 @@ export class GridComponent {
       }
   }
 
+  toggleBillieJean(){
+    let Jean = new Audio('../../assets/SFX/Jean.mp3');
+    if (this.gameGrid.moonwalk) {
+      Jean.load();
+      Jean.play();
+    }
+    if (this.gameGrid.moonwalk === false){
+      console.log("not my lover");
+      Jean.pause();
+    }
+  }
+
   playMeow(){
     let meow = new Audio('../../assets/SFX/meow.mp3');
     meow.load();
@@ -121,6 +138,16 @@ export class GridComponent {
 
   renderSprite (tile){
     let styles = {};
+    if (this.gameGrid.moonwalk === true && tile.direction === "right") {
+      tile.direction = "left";
+    } else if (this.gameGrid.moonwalk === true && tile.direction === "left") {
+      tile.direction = "right";
+    }
+    if (this.gameGrid.moonwalk === true && tile.direction === "up") {
+      tile.direction = "down";
+    } else if (this.gameGrid.moonwalk === true && tile.direction === "down") {
+      tile.direction = "up";
+    }
     if (tile.player && tile.direction === "down") {
       styles['background-image'] = 'url(../../assets/image/student.png)';
       styles['background-size'] = '1152px 780px';
@@ -132,6 +159,7 @@ export class GridComponent {
       styles['background-position'] = '576px -292.8px';
     }
     if (tile.player && tile.direction === "right") {
+
       styles['background-image'] = 'url(../../assets/image/student.png)';
       styles['background-size'] = '1152px 780px';
       styles['background-position'] = '576px -195px';
@@ -148,6 +176,16 @@ export class GridComponent {
     if (tile.goal){
       styles['background-image'] = 'url(../../assets/image/image1.png)'
       styles['background-size'] = '100% 100%';
+    }
+    if (this.gameGrid.moonwalk === true && tile.enemyDirection === "right") {
+      tile.enemyDirection = "left";
+    } else if (this.gameGrid.moonwalk === true && tile.enemyDirection === "left") {
+      tile.enemyDirection = "right";
+    }
+      if (this.gameGrid.moonwalk === true && tile.enemyDirection === "up") {
+        tile.enemyDirection = "down";
+      } else if (this.gameGrid.moonwalk === true && tile.enemyDirection === "down") {
+        tile.enemyDirection = "up";
     }
     if (tile.enemy && tile.enemyDirection === "down") {
       styles['background-image'] = 'url(../../assets/image/teacher.png)';

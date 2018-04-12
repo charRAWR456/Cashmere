@@ -3,6 +3,7 @@ import { Tile } from "./tile.model";
 export class grid {
   board = [];
   tiles = [];
+  moonwalk: boolean = false;
   height: number = 10;
   width: number = 10;
   counter: number = 0;
