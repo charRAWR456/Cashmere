@@ -30,6 +30,12 @@
   font-weight: bold;
 }
 
+#img {
+  height: 400px;
+  width: 400px;
+  margin-top: 45px;
+}
+
 .container{
   margin-bottom: 180px;
 }
