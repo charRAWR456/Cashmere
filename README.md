@@ -4,7 +4,7 @@
 ### By Jamie Pittak, Panatda Inthala, Eric Swotinsky, Nanette Girzi, Tyler Kostelak, Dillon Titcomb
 
 ## Description
-User will play as a student at a bootcamp that wants to take a break to pet the school mascot, the amazing scottish fold Cashmere. You as the student must escape the teachers wrath and make it to Cashmere before you are caught (3 time). If you successfully make it to Cashmere you can graduate early! :)
+User will play as a student at a bootcamp that wants to take a break to pet the school mascot, the amazing scottish fold Cashmere. You as the student must escape the teachers wrath and make it to Cashmere before you are caught. If you successfully make it to Cashmere you can graduate early! :)
 
 ## Setup
 1. Make sure you have Angular, Node.js and npm installed
@@ -35,23 +35,29 @@ User will play as a student at a bootcamp that wants to take a break to pet the 
 1. user will make login info
 2. login info will be stored in database
 3. game board loads on launch
-4. player moves based on user click
+4. player moves based on arrow key press
 5. if obstacle is in place player will move around obstacle
 6. enemy will follow player
-7. if enemy collides with player life is taken
+7. if enemy collides with player game is over
 8. if player reaches goal game is won
-9. player has 3 lives
-10. if player looses 3 lives game is over
-11. game has timer
-12. if timer runs out before goal is reached game over
-13. if player wins score page will pop up and score will be stored in database
-14. user can pause game by clicking pause on navbar
+9. game has step counts as a grade/score
+10. if player wins score page will pop up and score will be stored in database
+
+_ Home page
+![Home](src/assets/image/home.png)
+
+_ Sign-Up page
+![sign-up](src/assets/image/sign-up.png)
+
+_ Game Play page
+![play](src/assets/image/play.png)
+
 
 ## Technologies Used
 * Typescript
 * Angular
 * Firebase
-* A* Algorithm
+* Breadth First Search Algorithm  
 * HTML
 * CSS
 * Bootstrap
