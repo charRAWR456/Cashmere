@@ -116,7 +116,7 @@ export class grid {
   }
 
   isGameOver() {
-    return (this.findEnemy() == this.findPlayer());
+    return (this.findEnemy() == this.findPlayer() || this.studentGrade === "F");
   }
 
   playerWon() {
