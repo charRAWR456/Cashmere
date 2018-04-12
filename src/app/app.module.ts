@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Pipes and Services
 import { AuthenticationService } from './services/authentication.service';
-
+import { AuthenticationGuard } from './services/authentication-guard.service';
 import * as firebase from 'firebase/app';
 
 //Components
@@ -53,6 +53,7 @@ import { ModalComponent } from './modal/modal.component';
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [AuthenticationService,
+    AuthenticationGuard
   ],
   bootstrap: [AppComponent]
 })
