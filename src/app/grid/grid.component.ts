@@ -46,6 +46,10 @@ export class GridComponent {
       playerPosition.player = false;
       this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].direction = "down";
     }
+    if (this.gameGrid.findPlayer() === this.gameGrid.findEnemy()) {
+      this.playCaught();
+      this.showDialog = true;
+    }
     this.gameGrid.moveEnemy();
     this.gameGrid.getEnemyDirection();
     if (this.gameGrid.isGameOver()){
@@ -53,6 +57,7 @@ export class GridComponent {
       this.showDialog = true;
     }
     if (this.gameGrid.playerWon()) {
+      this.gameGrid.removepPlayerFromGoal();
       this.playMeow();
       this.showWin = true;
     }
