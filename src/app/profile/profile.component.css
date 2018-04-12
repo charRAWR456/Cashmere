@@ -59,3 +59,10 @@
 body {
   background-color: #00b3b4;
 }
+
+#pic-help-text {
+  font-family: 'Oswald', sans-serif;
+  color: #313332;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

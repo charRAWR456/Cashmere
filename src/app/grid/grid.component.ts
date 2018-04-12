@@ -68,15 +68,18 @@ export class GridComponent {
   }
 
   playerGrade(){
-    this.gameGrid.studentGrade = "A"
-    if(this.gameGrid.counter == 35){
-      this.gameGrid.studentGrade = "B"
-    }else if(this.gameGrid.counter == 36 ){
-      this.gameGrid.studentGrade = "C"
-    }else if(this.gameGrid.counter == 37 ){
-    this.gameGrid.studentGrade = "D"
-    }else if(this.gameGrid.counter >= 38 ){
-      this.gameGrid.studentGrade = "F"
+    if (this.gameGrid.counter > 40) {
+      this.gameGrid.studentGrade = "F";
+    } else if (this.gameGrid.counter > 37) {
+      this.gameGrid.studentGrade = "D";
+    } else if (this.gameGrid.counter > 36) {
+      this.gameGrid.studentGrade = "C";
+    } else if (this.gameGrid.counter > 35) {
+      this.gameGrid.studentGrade = "B";
+    } else if (this.gameGrid.counter > 34) {
+        this.gameGrid.studentGrade = "A";
+    } else if (this.gameGrid.counter === 34) {
+      this.gameGrid.studentGrade = "A+++";
     }
     return this.gameGrid.studentGrade;
     }

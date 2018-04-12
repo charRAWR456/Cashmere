@@ -20,7 +20,7 @@ export class SignupComponent {
 
   signup() {
     firebase.auth().createUserWithEmailAndPassword(this.signupEmail, this.signupPassword)
-      .then(resolve => this.router.navigate(['login']))
+      .then(resolve => this.router.navigate(['profile']))
       .catch(error => error.message
     );
   }
