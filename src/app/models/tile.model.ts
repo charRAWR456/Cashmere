@@ -11,5 +11,4 @@ export class Tile {
     public direction:string="down",
     public enemyDirection:string="down"
   ){}
-
 }

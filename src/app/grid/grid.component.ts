@@ -24,27 +24,68 @@ export class GridComponent {
     this.gameGrid.counter += 1;
     this.playerGrade();
 
-    if (event.key === "ArrowLeft" && playerPosition.y !== 0 && this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].walkable) {
-      this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].player = true;
-      playerPosition.player = false;
-      this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].direction = "left";
+    if (event.key === "ArrowLeft") {
+			if (playerPosition.y !== 0 && this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].walkable) {
+				this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].player = true;
+				this.gameGrid.board[(playerPosition.x)][playerPosition.y].player = false;
+			}
+			this.gameGrid.board[(playerPosition.x)][playerPosition.y].direction = "left";
+			this.gameGrid.board[(playerPosition.x)][playerPosition.y-1].direction = "left";
     }
-    if (event.key === "ArrowRight" && playerPosition.y !== 9 && (this.gameGrid.board[(playerPosition.x)][playerPosition.y+1]).walkable) {
-      this.gameGrid.board[(playerPosition.x)][playerPosition.y+1].player = true;
-      playerPosition.player = false;
-      this.gameGrid.board[(playerPosition.x)][playerPosition.y+1].direction = "right";
+    if (event.key === "ArrowRight") {
+			if (playerPosition.y !== 9 && (this.gameGrid.board[(playerPosition.x)][playerPosition.y+1]).walkable) {
+				this.gameGrid.board[(playerPosition.x)][playerPosition.y+1].player = true;
+				this.gameGrid.board[(playerPosition.x)][playerPosition.y].player = false;
+				}
+				this.gameGrid.board[(playerPosition.x)][playerPosition.y].direction = "right";
+				this.gameGrid.board[(playerPosition.x)][playerPosition.y+1].direction = "right";
+			}
+    if (event.key === "ArrowUp") {
+			if (playerPosition.x !== 0 && this.gameGrid.board[(playerPosition.x-1)][playerPosition.y].walkable) {
+				this.gameGrid.board[(playerPosition.x-1)][playerPosition.y].player = true;
+				this.gameGrid.board[(playerPosition.x)][playerPosition.y].player = false;
+			}
+			this.gameGrid.board[(playerPosition.x)][playerPosition.y].direction = "up";
+			this.gameGrid.board[(playerPosition.x-1)][playerPosition.y].direction = "up";
     }
+		if (event.key === "ArrowDown") {
+			if (playerPosition.x !== 9 && this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].walkable){
+				this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].player = true;
+				this.gameGrid.board[(playerPosition.x)][playerPosition.y].player = false;
+			}
+			this.gameGrid.board[(playerPosition.x)][playerPosition.y].direction = "down"
+			this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].direction = "down";
+		}
 
-    if (event.key === "ArrowUp" && playerPosition.x !== 0 && this.gameGrid.board[(playerPosition.x-1)][playerPosition.y].walkable) {
-      this.gameGrid.board[(playerPosition.x-1)][playerPosition.y].player = true;
-      playerPosition.player = false;
-      this.gameGrid.board[(playerPosition.x-1)][playerPosition.y].direction = "up";
-    }
-    if (event.key === "ArrowDown" && playerPosition.x !== 9 && this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].walkable) {
-      this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].player = true;
-      playerPosition.player = false;
-      this.gameGrid.board[(playerPosition.x+1)][playerPosition.y].direction = "down";
-    }
+
+		//Player can remove obstacles in whichever tile they're facing
+		if ((playerPosition.x !== 0) && event.key === "d" && !(this.gameGrid.board[playerPosition.x-1][playerPosition.y].walkable) && this.gameGrid.board[playerPosition.x][playerPosition.y].direction === "up") {
+			this.gameGrid.board[playerPosition.x-1][playerPosition.y].walkable = true;
+		}
+		if ((playerPosition.x !== 9) && event.key === "d" && !(this.gameGrid.board[playerPosition.x+1][playerPosition.y].walkable) && this.gameGrid.board[playerPosition.x][playerPosition.y].direction === "down") {
+			this.gameGrid.board[playerPosition.x+1][playerPosition.y].walkable = true;
+		}
+		if ((playerPosition.y !== 9) && event.key === "d" && !(this.gameGrid.board[playerPosition.x][playerPosition.y+1].walkable) && this.gameGrid.board[playerPosition.x][playerPosition.y].direction === "right") {
+			this.gameGrid.board[playerPosition.x][playerPosition.y+1].walkable = true;
+		}
+		if ((playerPosition.y !== 0) && event.key === "d" && !(this.gameGrid.board[playerPosition.x][playerPosition.y-1].walkable) && this.gameGrid.board[playerPosition.x][playerPosition.y].direction === "left") {
+			this.gameGrid.board[playerPosition.x][playerPosition.y-1].walkable = true;
+		}
+
+		//Player can create obstacles in whichever tile they're facing
+		if ((playerPosition.x !== 0) && event.key === "c" && (this.gameGrid.board[playerPosition.x-1][playerPosition.y].walkable) && this.gameGrid.board[playerPosition.x][playerPosition.y].direction === "up") {
+			this.gameGrid.board[playerPosition.x-1][playerPosition.y].walkable = false;
+		}
+		if ((playerPosition.x !== 9) && event.key === "c" && (this.gameGrid.board[playerPosition.x+1][playerPosition.y].walkable) && this.gameGrid.board[playerPosition.x][playerPosition.y].direction === "down") {
+			this.gameGrid.board[playerPosition.x+1][playerPosition.y].walkable = false;
+		}
+		if ((playerPosition.y !== 9) && event.key === "c" && (this.gameGrid.board[playerPosition.x][playerPosition.y+1].walkable) && this.gameGrid.board[playerPosition.x][playerPosition.y].direction === "right") {
+			this.gameGrid.board[playerPosition.x][playerPosition.y+1].walkable = false;
+		}
+		if ((playerPosition.y !== 0) && event.key === "c" && (this.gameGrid.board[playerPosition.x][playerPosition.y-1].walkable) && this.gameGrid.board[playerPosition.x][playerPosition.y].direction === "left") {
+			this.gameGrid.board[playerPosition.x][playerPosition.y-1].walkable = false;
+		}
+
     //Below code is to ensure player and enemy don't switch tiles.
     if (this.gameGrid.findPlayer() === this.gameGrid.findEnemy()) {
       this.playCaught();
